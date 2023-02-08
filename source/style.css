@@ -1,0 +1,21 @@
+html {
+  scroll-padding-top: 3.7rem;
+  scroll-behavior: smooth;
+}
+
+.img-size {
+  height: 200px;
+  width: 400px;
+  object-fit: contain;
+}
+
+.img-size-backoffice {
+  border: 2px solid red;
+  height: 100px;
+  width: 200px;
+  object-fit: contain;
+}
+
+.transform.translate-x-full {
+  transform: translateX(100%);
+}

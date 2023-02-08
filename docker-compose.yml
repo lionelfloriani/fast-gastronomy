@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  ## PHP-Apache service
+  server:
+    build:
+      context: ./source
+    container_name: restaurant-webserver
+    ports:
+      - 4000:80
+    restart: always
+    volumes:
+      - ./source:/var/www/html
+    env_file:
+      - ./docker.env
+    networks:
+      - restaurant
+
+  ## Mariadb service 
+  database:
+    image: mariadb:10.4.2
+    container_name: restaurant-database
+    restart: always
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d/
+      - becode_data:/var/lib/mysql
+    env_file:
+      - ./docker.env
+    networks:
+      - restaurant
+
+  ## PhpMyAdmin
+  myadmin:
+    image: phpmyadmin/phpmyadmin:4.8.1
+    container_name: restaurant-phpmyadmin
+    ports:
+      - 4001:80
+    restart: always
+    env_file:
+      - ./docker.env
+    depends_on:
+      - database
+    networks:
+      - restaurant
+
+networks:
+  restaurant:
+
+volumes:
+  becode_data:
