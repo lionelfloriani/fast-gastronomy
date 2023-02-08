@@ -6,6 +6,17 @@ Quay is a fictional fast-food restaurant. The name and logos are not owned by th
 
 The project has a backend that includes a back office menu for the admin. The admin can log in and manage messages left by users through the contact form, including viewing and deleting them. The back office also allows for uploading and managing pictures.
 
+![home](img_readme/home.png)
+
+*Click on "We do it faster & we do it better" to access the backoffice*
+
+![backoffice](img_readme/login-backoffice.png)
+
+*Use `admin` + `nimda`*
+
+![messages](img_readme/messages-backoffice.png)
+![photos](img_readme/photos-backoffice.png)
+
 ## Development
 
 To get started with developing the Quay website:
